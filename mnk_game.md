@@ -16,7 +16,7 @@ We are looking for your ability to design and write code that is well-organized,
 - If a player clicks on a space that is already occupied by a piece, no change is made. This is not counted as a move.
 
 #### Part 2: Keep track of player names
-- After a user selects "New Game", the game asks for the names of each player. This can take place at the same time the user enters the board height and width.
+- After a user selects "New Game", the game asks for the names of each player. This can take place at the same time the user enters the board height and width (with a minimum height and width of 4).
 - Before each move, the game displays the name of player whose turn it is.
 
 #### Part 3: Determine a winner.
@@ -41,4 +41,4 @@ The requirements that follow are entirely optional.
 
 #### Part 5: Variable win condition
 
-- Before a new game is started, a user can set the number of pieces that must be in a row.
+- Before a new game is started, a user can set the number of connected pieces that would determines a win
