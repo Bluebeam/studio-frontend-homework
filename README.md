@@ -1,5 +1,8 @@
 # Bluebeam Web Development Homework
 
+## **IMPORTANT**
+**DO NOT** upload any contents of this homework into any public repository system, including Github, Bitbucket, GitLab, etc. 
+
 ### Setup
 Please make sure you have the following installed locally:
 
