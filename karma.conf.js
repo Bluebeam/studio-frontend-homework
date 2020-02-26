@@ -31,28 +31,29 @@ module.exports = function(config) {
     ],
 
     webpack: {
-      mode: 'development',
+      mode: 'production',
       devtool: 'inline-source-map',
       module: {
         rules: [{
           test: /\.(js|jsx)$/,
+          use: {
+            loader: 'istanbul-instrumenter-loader',
+            options: { esModules: true }
+          },
+          enforce: 'post'
+        }, {
+          test: /\.(js|jsx)$/,
           use: [{
-            loader: 'istanbul-instrumenter-loader'
-          }, {
             loader: 'babel-loader',
             options: {
               presets: [
-                ['@babel/preset-env', {
-                  'targets': {
-                    'browsers': ['last 2 versions', 'safari >= 7']
-                  }
-                }],
                 '@babel/preset-react'
               ],
               plugins: [
-                'react-hot-loader/babel',
+                '@babel/plugin-syntax-dynamic-import',
+                '@babel/plugin-proposal-class-properties',
                 '@babel/plugin-proposal-object-rest-spread',
-                '@babel/plugin-proposal-class-properties'
+                '@babel/plugin-proposal-optional-chaining',
               ]
             }
           }],
@@ -109,7 +110,7 @@ module.exports = function(config) {
 
 
     // Concurrency level
-    // how many browser should be started simultaneous
+    // how many browsers should be started simultaneous
     concurrency: Infinity,
 
 

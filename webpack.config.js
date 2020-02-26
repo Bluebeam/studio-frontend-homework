@@ -12,7 +12,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/static/'
   },
+  mode: 'development',
   devtool: 'source-map',
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    },
+    extensions: ['.js', '.mjs']
+  },
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
@@ -28,9 +35,11 @@ module.exports = {
           '@babel/preset-react'
         ],
         plugins: [
-          'react-hot-loader/babel',
+          '@babel/plugin-syntax-dynamic-import',
+          '@babel/plugin-proposal-class-properties',
           '@babel/plugin-proposal-object-rest-spread',
-          '@babel/plugin-proposal-class-properties'
+          '@babel/plugin-proposal-optional-chaining',
+          'react-hot-loader/babel'
         ]
       }
     }, {

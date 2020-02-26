@@ -12,7 +12,7 @@ const html = fs.readFileSync(path.join(__dirname, 'index.html'), { encoding: 'ut
 
 // Start json-server in child process.
 spawn(
-  path.resolve(__dirname, '../node_modules/json-server/bin/index.js'),
+  'npx json-server',
   ['--watch', './server/db.json'],
   { stdio: 'inherit', shell: true }
 );

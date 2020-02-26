@@ -7,8 +7,8 @@
 Please make sure you have the following installed locally:
 
 ```
-node >= 8.9.3
-npm >= 5.5.1
+node >= 10.19.0
+npm >= 6.4.1
 ```
 
 To run the project in your console, type:
